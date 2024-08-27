@@ -46,6 +46,8 @@ One important case of the physics of deep learning. The validation loss follows 
   - Larger models can achieve the same test loss with less amount of data,
   - Compute-optimal point != model convergence.
 
+- 21', [Scale Efficiently: Insights from Pre-training and Fine-tuning Transformers](https://arxiv.org/pdf/2109.10686): downstream task performance can't be predicted by the perplexity; model shape is important for the downstream task. Here, suggests deepening the model instead of widening the model. 
+
 - 21', [Scaling Laws for Transfer](https://arxiv.org/pdf/2102.01293): "Effective data transferred" follows the power law in the data regime, which means that pre-training enables models to achieve lower test loss on target task (fine-tuning setups. But should consider the "ossification" phenomena, where the model shows worse test loss when the model is pre-trained; this is shown in the low-parameter regime.
 
 - 22', [Training compute-optimal large language models](https://arxiv.org/abs/2203.15556): aka chinchilla paper; obtained different fitted power laws from the scaling law before. Key takeaway is that the models are under-trained, so need to scale the data more than before.
@@ -53,13 +55,14 @@ One important case of the physics of deep learning. The validation loss follows 
 
 - 23', [Scaling Data-Constrained Language Models](https://arxiv.org/pdf/2305.16264) and 24', [Scaling Laws for Data Filtering— Data Curation cannot be Compute Agnostic](https://arxiv.org/pdf/2404.07177#page=6.06): Previous scaling law only considered when the data is unlimited (so training for one epoch), what if the data is limited? First paper says that similar to Chinchilla-optimal, allocate more compute on data until it is not repeating too much; 4 epochs of training is okay for the experiments. Note that Chinchilla paper also didn't consider repeating data. Second paper assumes the heterogeneity of the utility of the data, showing the quality-quantity tradeoff of the data which should be considered when finding the compute-optimal point.
 
-- 23', [Scaling Laws for Reward Model Overoptimization](https://proceedings.mlr.press/v202/gao23h/gao23h.pdf)
+- 23', [Scaling Laws for Reward Model Overoptimization](https://proceedings.mlr.press/v202/gao23h/gao23h.pdf) and 24', [Scaling Laws for Reward Model Overoptimization](https://arxiv.org/pdf/2406.02900): discussing the trade-off between reward and the kl-divergence -- higher KL divergence between the initial policy and the trained policy means the higher reward score. Practically meaningful to find the optimal point of the RLHF training.
 
 ### Subtopic: how to explain the power laws?
 
 WIP. But some papers to read:
 
 - 21', [Learning Curve Theory](https://arxiv.org/pdf/2102.04074)
+- 22', [A Solvable Model of Neural Scaling Laws](https://arxiv.org/pdf/2210.16859)
 - 23', [Explaining neural scaling laws](https://www.pnas.org/doi/epdf/10.1073/pnas.2311878121)
 
 ## Finding compute multipliers
