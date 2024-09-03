@@ -79,6 +79,7 @@ Or, you can even look for the model architecture innovations, such as using stat
 
 WIP. But some papers to read:
 
+- 24', [Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler](https://arxiv.org/abs/2408.13359)
 - WSD scheduler (from vision transformers, minicpm, )
 - Scheduler-free training
 
@@ -87,3 +88,13 @@ WIP. But some papers to read:
 WIP. But some papers to read:
 
 - 18', [Shampoo: Preconditioned Stochastic Tensor Optimization](https://arxiv.org/pdf/1802.09568)
+
+## Other topics to read
+
+Controlled experiments (using small amount of GPUs) to understand the language models better:
+
+- 23', [Physics of language models: Part 3.1, knowledge storage and extraction](https://arxiv.org/pdf/2309.14316)
+- 23', [Physics of language models: Part 3.2, knowledge manipulation](https://arxiv.org/pdf/2309.14402)
+- 24', [Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws](https://arxiv.org/abs/2404.05405)
+- 24', [Physics of Language Models: Part 2.1, Grade-School Math and the Hidden Reasoning Process](https://arxiv.org/abs/2407.20311)
+- 24', [Physics of Language Models: Part 2.2, How to Learn From Mistakes on Grade-School Math Problems](https://www.arxiv.org/abs/2408.16293)
