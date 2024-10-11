@@ -4,13 +4,17 @@ Training large neural networks (in 2024, meaning more than hundred billions of p
 
 Acknowledgement: I would recommend reading this [insane blog](https://cloneofsimo.notion.site/What-to-do-to-scale-up-09e469d7c3444d6a90305397c38a46f5) from [@cloneofsimo](https://x.com/cloneofsimo), which is a great resource for scaling up neural networks and motivated me a lot to study this topic.
 
+Note that I am still reading some of these papers -- I will update the contents when I finish reading them.
+
 ## How to set your batchsize?
 
 - 18', [An Empirical Model of Large-Batch Training](https://arxiv.org/pdf/1812.06162): Use gradient noise scale to determine the critical batch size (for optimal compute/time tradeoffs) for model training (larger batchsize = smaller loss improvement from single step.) Discuss the trade-off between the time and the computational cost; in general, small batch size is better for the compute-optimality. Also discussed changes of the critical batch size during training, dynamic batch size may help?
 - More readings (not carefully read yet)
+  - 18', [Measuring the Effects of Data Parallelism on Neural Network Training](https://arxiv.org/pdf/1811.03600) 
   - Awesome blog post: 24', [How to Scale Hyperparameters as Batch Size Increases](https://www.cs.princeton.edu/~smalladi/blog/2024/01/22/SDEs-ScalingRules/): Using SDE to understand the impact of batch size on gradient noise scale.
   - 19', [Measuring the Effects of Data Parallelism on Neural Network Training](https://www.jmlr.org/papers/v20/18-789.html)
   - 19', [Which Algorithmic Choices Matter at Which Batch Sizes? Insights From a Noisy Quadratic Model](https://proceedings.neurips.cc/paper/2019/hash/e0eacd983971634327ae1819ea8b6214-Abstract.html)
+
 
 ## How to stabilize your training?
 
@@ -20,7 +24,11 @@ WIP, but thinking of reading these papers more carefully:
 
 ## How to initialize your model?
 
-WIP. Now studying mup.
+Still reading.
+
+- 22', [Feature Learning in Infinite-Width Neural Networks](https://arxiv.org/pdf/2011.14522)
+- 22', [Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer](https://arxiv.org/pdf/2203.03466): also known as mup. Hparams like learning rate can be transferred for width and depth.
+- 23', [A Spectral Condition for Feature Learning](https://arxiv.org/pdf/2310.17813)
 
 ## Which data should I use? -- on the focus of language modeling
 
@@ -35,7 +43,6 @@ Lots of papers are discussing the importance of high-quality data, but the notio
 
 - 23', [DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining](https://arxiv.org/abs/2305.10429): use learnability ([rho-loss](https://proceedings.mlr.press/v162/mindermann22a.html)) to upweight the data that is more learnable, worth learning, and not yet learnt. Also works in [vision models](https://arxiv.org/abs/2312.05328).
   - One caveat is that it uses a proxy model to find the weights; empirical results show that it works well, but there are several evidences ([LESS](https://arxiv.org/abs/2402.04333), [Data Mixing Law](https://arxiv.org/abs/2403.16952)) that the proxy model is not perfect.
-
 
 ## Loss power laws
 
@@ -59,6 +66,8 @@ One important case of the physics of deep learning. The validation loss follows 
 
 ### Subtopic: how to explain the power laws?
 
+- 24', [Rethinking Conventional Wisdom in Machine Learning: From Generalization to Scaling](https://arxiv.org/pdf/2409.15156): not actually explaining the scaling laws; empirically showing the cross-over phenomena in the large-model training regime (scaling regime). Scaling regime != generalization regime.
+
 WIP. But some papers to read:
 
 - 21', [Learning Curve Theory](https://arxiv.org/pdf/2102.04074)
@@ -79,8 +88,8 @@ Or, you can even look for the model architecture innovations, such as using stat
 
 WIP. But some papers to read:
 
-- 24', [Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler](https://arxiv.org/abs/2408.13359)
-- WSD scheduler (from vision transformers, minicpm, )
+- 24', [Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler](https://arxiv.org/abs/2408.13359): learning rate is NOT agnostic to the number of training tokens and the batch size.
+- 24', [Minicpm: Unveiling the potential of small language models with scalable training strategies](https://arxiv.org/abs/2404.06395): use WSD (Warmup-stable-decay) scheduler for model training, better practicality than the cosine scheduler.
 - Scheduler-free training
 
 ## Optimizers
