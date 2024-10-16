@@ -73,6 +73,7 @@ WIP. But some papers to read:
 - 21', [Learning Curve Theory](https://arxiv.org/pdf/2102.04074)
 - 22', [A Solvable Model of Neural Scaling Laws](https://arxiv.org/pdf/2210.16859)
 - 23', [Explaining neural scaling laws](https://www.pnas.org/doi/epdf/10.1073/pnas.2311878121)
+- 24', [4+3 Phases of Compute-Optimal Neural Scaling Laws](https://arxiv.org/pdf/2405.15074)
 
 ## Finding compute multipliers
 
